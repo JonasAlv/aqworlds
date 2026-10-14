@@ -1,0 +1,21 @@
+// Auto Leveling Script - ShadowBattleon Doomed Trolls
+// spam 3 quests: 9421, 9422, 9423
+
+function onStart() {
+    log("Starting ShadowBattleon farm");
+    acceptAllDrops();
+    equipLoadout("farm");
+    join("shadowbattleon", "Enter", "Spawn");
+    autoQuest([9421, 9422, 9423]);
+}
+
+function onTick() {
+    ensureMap("shadowbattleon", "Enter", "Spawn");
+    ensureCombat();
+}
+
+function onStop() {
+    log("ShadowBattleon farm stopped");
+    stopAutoQuest();
+    stopCombat();
+}

@@ -1,0 +1,282 @@
+// =============================================================================
+// Master Daily Quests Runner (Dailies.hxs)
+// Autonomous progression daily bot covering all core endgame progression dailies.
+// Automatically snapshots your original gear and restores it when finished.
+// =============================================================================
+
+var step = 0;
+
+function onStart() {
+    log("Beginning Master Daily Quests Routine...");
+    step = 0;
+    storeGear();
+    acceptAllDrops();
+    equipLoadout("farm");
+}
+
+function onTick() {
+    // -------------------------------------------------------------------------
+    // 1. Elders' Blood (Daily Quest 802) - VHL / Nulgath requirement
+    // -------------------------------------------------------------------------
+    if (step == 0) {
+        if (hasItem("Elders' Blood", 5) || hasBeenCompleted(802)) {
+            step++;
+            return;
+        }
+        if (quest(802, "arcangrove")) {
+            if (!huntItem("Gorillaphant", "Slain Gorillaphant", 50)) return;
+            complete(802);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 2. MineCrafting (Daily Quest 2091) - BLoD & SDKA requirement
+    // -------------------------------------------------------------------------
+    if (step == 1) {
+        if (hasBeenCompleted(2091)) {
+            step++;
+            return;
+        }
+        if (quest(2091, "stalagbite")) {
+            if (!huntItem("Balboa", "Axe of the Prospector", 1)) return;
+            if (!huntItem("Balboa", "Raw Ore", 30)) return;
+            complete(2091, ["Barium", "Aluminum", "Copper", "Gold", "Iron", "Silver", "Platinum"]);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 3. Hard Core Metals (Daily Quest 2092) - Member SDKA requirement
+    // -------------------------------------------------------------------------
+    if (step == 2) {
+        if (!isMember() || hasBeenCompleted(2092)) {
+            step++;
+            return;
+        }
+        if (quest(2092, "stalagbite")) {
+            if (!huntItem("Balboa", "Axe of the Prospector", 1)) return;
+            if (!huntItem("Balboa", "Raw Ore", 30)) return;
+            complete(2092, ["Arsenic", "Chromium", "Rhodium", "Beryllium", "Palladium", "Thorium", "Mercury"]);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 4. Free The Pets / Originul (Daily Quest 7551) - Polly Roger & Nulgath
+    // -------------------------------------------------------------------------
+    if (step == 3) {
+        if (hasBeenCompleted(7551)) {
+            step++;
+            return;
+        }
+        if (quest(7551, "originul")) {
+            if (!huntItem("Mana Golem", "Mana Energy for Nulgath", 1, "elemental")) return;
+            complete(7551);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 5. Shurpu Blaze Tokens / Pyromancer (Daily Quest 2224)
+    // -------------------------------------------------------------------------
+    if (step == 4) {
+        if (hasItem("Pyromancer") || hasItem("Shurpu Blaze Token", 84) || hasBeenCompleted(2224)) {
+            step++;
+            return;
+        }
+        if (quest(2224, "xancave")) {
+            if (!huntItem("Shurpu Ring Guardian", "Guardian Defeated", 1)) return;
+            complete(2224);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 6. The Collector Class (Daily Quest 1316)
+    // -------------------------------------------------------------------------
+    if (step == 5) {
+        if (hasItem("The Collector") || hasItem("Token of Collection", 90) || hasBeenCompleted(1316)) {
+            step++;
+            return;
+        }
+        if (quest(1316, "terrarium")) {
+            if (!huntItem("Carnivorous Cricket", "This Might Be A Token", 2)) return;
+            complete(1316);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 7. Cryomancer Class (Daily Quest 3966 / 3965)
+    // -------------------------------------------------------------------------
+    if (step == 6) {
+        var cryoQid = isMember() ? 3965 : 3966;
+        if (hasItem("Cryomancer") || hasItem("Glacera Ice Token", 84) || hasBeenCompleted(cryoQid)) {
+            step++;
+            return;
+        }
+        if (quest(cryoQid, "frozentower")) {
+            if (!huntItem("Frost Invader", "Dark Ice", 1)) return;
+            complete(cryoQid);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 8. Shadow Shield / ShadowScythe General (Daily Quest 3828 / 3827)
+    // -------------------------------------------------------------------------
+    if (step == 7) {
+        var ssQid = isMember() ? 3827 : 3828;
+        if (hasItem("ShadowScythe General") || hasItem("Shadow Shield", 100) || hasBeenCompleted(ssQid)) {
+            step++;
+            return;
+        }
+        if (quest(ssQid, "lightguardwar")) {
+            if (!huntItem("Citadel Crusader", "Broken Blade", 1)) return;
+            complete(ssQid);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 9. Dage's Scroll Fragment (Daily Quest 3596)
+    // -------------------------------------------------------------------------
+    if (step == 8) {
+        if (hasItem("Dage's Scroll Fragment", 13) || hasBeenCompleted(3596)) {
+            step++;
+            return;
+        }
+        if (quest(3596, "mountdoomskull")) {
+            if (!huntItem("*", "Chaos Power Increased", 6)) return;
+            complete(3596);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 10. Crypto Token (Daily Quest 6187) - /curio
+    // -------------------------------------------------------------------------
+    if (step == 9) {
+        if (hasItem("Crypto Token", 300) || hasBeenCompleted(6187)) {
+            step++;
+            return;
+        }
+        if (quest(6187, "boxes")) {
+            if (!huntItem("Sneevil", "Metal Ore", 1)) return;
+            complete(6187);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 11. Sparrow's Blood (Daily Quest 803)
+    // -------------------------------------------------------------------------
+    if (step == 10) {
+        if (hasItem("Sparrow's Blood", 3) || hasBeenCompleted(803)) {
+            step++;
+            return;
+        }
+        if (quest(803, "arcangrove")) {
+            if (!huntItem("Blood Lily", "Blood Lily", 30)) return;
+            if (!huntItem("Snapdrake", "Snapdrake", 17)) return;
+            if (!huntItem("*", "DOOM Dirt", 12)) return;
+            complete(803);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 12. BeastMaster Challenge / C-Bacon (Daily Quest 6081)
+    // -------------------------------------------------------------------------
+    if (step == 11) {
+        if (hasBeenCompleted(6081)) {
+            step++;
+            return;
+        }
+        if (quest(6081, "greenguardwest")) {
+            if (!huntItem("Big Bad Boar", "C-Bacon", 1)) return;
+            complete(6081);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 13. Fungi for a Fun Guy (Daily Quest 3122)
+    // -------------------------------------------------------------------------
+    if (step == 12) {
+        if (hasBeenCompleted(3122)) {
+            step++;
+            return;
+        }
+        if (quest(3122, "mafic")) {
+            if (!huntItem("Mafic Dragon", "Fresh Dragon Cheese", 1)) return;
+            complete(3122);
+            step++;
+            return;
+        }
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 14. Wheel of Doom Free Spin (Quests 3075 / 3076)
+    // -------------------------------------------------------------------------
+    if (step == 13) {
+        if (isMember() && !hasBeenCompleted(3075)) {
+            if (quest(3075, "doom")) {
+                complete(3075);
+                return;
+            }
+            return;
+        }
+        if (getItemCount("Gear of Doom") >= 3 && !hasBeenCompleted(3076)) {
+            if (quest(3076, "doom")) {
+                complete(3076);
+                return;
+            }
+            return;
+        }
+        step++;
+        return;
+    }
+
+    // -------------------------------------------------------------------------
+    // 15. All Dailies Complete! Clean up and restore original vanity/combat gear
+    // -------------------------------------------------------------------------
+    log("All daily quests completed successfully!");
+    stopCombat();
+    ensureHouse();
+    restoreGear();
+    stop();
+}
+
+function onStop() {
+    log("Daily Routine stopped.");
+    stopCombat();
+    ensureHouse();
+    restoreGear();
+}

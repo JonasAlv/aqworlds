@@ -1,0 +1,18 @@
+// Script: Optimize AC Inventory
+// Banks all unequipped and non-cosmetic AC items, then unbanks all Non-AC items.
+
+function onStart() {
+    log("Starting inventory optimization");
+    bankAcAndUnbankNonAc();
+}
+
+function onTick() {
+    if (isBanking() || isUnbanking()) return;
+
+    log("Inventory optimization complete");
+    stop();
+}
+
+function onStop() {
+    log("Inventory optimization stopped");
+}

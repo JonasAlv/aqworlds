@@ -1,0 +1,18 @@
+// Test Script: Bank All Unequipped Items
+// Safely deposits all unequipped, non-temporary inventory items into the bank.
+
+function onStart() {
+    log("Starting bank all");
+    bankAll();
+}
+
+function onTick() {
+    if (isBanking()) return;
+
+    log("Bank all complete");
+    stop();
+}
+
+function onStop() {
+    log("Bank all stopped");
+}

@@ -1,0 +1,18 @@
+// Script: Bank All AC Items
+// Safely deposits all unequipped and non-cosmetic AC items into free bank storage.
+
+function onStart() {
+    log("Starting bank all AC items");
+    bankAllAcItems();
+}
+
+function onTick() {
+    if (isBanking()) return;
+
+    log("Bank all AC items complete");
+    stop();
+}
+
+function onStop() {
+    log("Bank all AC items stopped");
+}

@@ -1,0 +1,18 @@
+//hscript
+// Script: Sell Blacklisted Items
+// Sells all unequipped inventory items that are on your blacklist.
+// Add items to the blacklist via Settings > Manage Blacklist or addBlacklist("Item Name").
+
+function onStart() {
+    log("Selling blacklisted items...");
+    sellBlacklist();
+}
+
+function onTick() {
+    log("Done.");
+    stop();
+}
+
+function onStop() {
+    log("Sell blacklist finished.");
+}

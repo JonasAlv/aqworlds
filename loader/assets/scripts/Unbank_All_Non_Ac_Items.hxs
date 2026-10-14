@@ -1,0 +1,18 @@
+// Script: Unbank All Non-AC Items
+// Safely withdraws all Non-AC items from bank into inventory.
+
+function onStart() {
+    log("Starting unbank all Non-AC items");
+    unbankAllNonAcItems();
+}
+
+function onTick() {
+    if (isUnbanking()) return;
+
+    log("Unbank all Non-AC items complete");
+    stop();
+}
+
+function onStop() {
+    log("Unbank all Non-AC items stopped");
+}

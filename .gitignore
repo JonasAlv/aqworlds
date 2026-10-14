@@ -1,0 +1,34 @@
+# Build output (all build artifacts isolated here)
+build/
+/target
+loader/*.abc
+*.log
+api.log
+loader/*.log
+
+# IDE
+/.idea/
+/.vscode/
+*.iml
+
+# Local keystore and credentials
+aqwpocket_keystore_local.p12
+
+# Upstream downloaded APKs (large binaries)
+upstream/*.apk
+upstream/*.part
+
+# Local SWC builds and native libraries
+loader/libs/AqwApi.swc
+loader/libs/ModUI.swc
+loader/libs/*/
+*.so
+
+# Release artifacts
+artifacts/
+
+# Stray editor/merge backups
+*.bak
+*.bak*
+*.orig
+*.rej

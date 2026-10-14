@@ -1,0 +1,3118 @@
+{
+  "abyssal angel": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Lament",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "abyssal angel's shadow": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Lament",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "acolyte": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "alpha doommega": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "alpha omega": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "alpha pirate": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "antique hunter": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Vainglory",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "arachnomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Penitence",
+        "Absolution"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Elysium",
+        "Valiance"
+      ],
+      "required": [
+        "Absolution",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "arcana invoker": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "arcane dark caster": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "archfiend": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "archivist of time": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Valiance",
+        "Pneuma",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "archmage": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "archpaladin": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Penitence"
+      ],
+      "helms": [
+        "Forge"
+      ],
+      "weapons": [
+        "Valiance",
+        "Praxis",
+        "Lacerate"
+      ],
+      "required": [
+        "Lacerate",
+        "Forge Helm",
+        "Penitence"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "artifact hunter": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Vainglory",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "assassin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "barber": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "bard": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "battlemage": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "battlemage of love": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "beast warrior": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "beastmaster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "berserker": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "beta berserker": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "blademaster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "blademaster assassin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "blaze binder": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Acheron"
+      ],
+      "required": [
+        "Avarice",
+        "Acheron",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "blood ancient": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "blood sorceress": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "blood titan": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "cardclasher": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos avenger": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Anima",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "chaos avenger member preview": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos champion prime": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos shaper": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "chaos slayer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos slayer berserker": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos slayer cleric": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos slayer mystic": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chaos slayer thief": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chrono assassin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "chrono chaorruptor": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Ravenous"
+      ],
+      "required": [
+        "Ravenous",
+        "Anima",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chrono commandant": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chrono dataknight": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous"
+      ],
+      "required": [
+        "Ravenous",
+        "Pneuma",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chrono dragonknight": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous"
+      ],
+      "required": [
+        "Ravenous",
+        "Pneuma",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chrono shadowhunter": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament",
+        "Forge"
+      ],
+      "helms": [
+        "Vim",
+        "Forge"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Arcanas Concerto",
+        "Forge",
+        "Awe Blast"
+      ],
+      "required": []
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "chrono shadowslayer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament",
+        "Forge"
+      ],
+      "helms": [
+        "Vim",
+        "Forge"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Arcanas Concerto",
+        "Forge",
+        "Awe Blast"
+      ],
+      "required": []
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chronocommander": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chronocorrupter": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "chronomancer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "chronomancer prime": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "chunin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic alpha pirate": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic barber": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic defender": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "classic doomknight": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic dragonlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "classic exalted soul cleaver": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic guardian": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic legion doomknight": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic mage": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "classic ninja": {
+    "type": "Thief",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "classic paladin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic pirate": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic rogue": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "classic soul cleaver": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "clawsuit": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "continuum chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "corrupted chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Spiral Carve"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "cryomancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "cryomancer mini pet coming soon": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "daimon": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "dark battlemage": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dark caster": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "dark chaos berserker": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "dark cryomancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "dark glaceran warlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "dark harbinger": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "dark legendary hero": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "dark lord": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "dark master of moglins": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Penitence"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Acheron"
+      ],
+      "required": [
+        "Penitence",
+        "Acheron",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dark metal necro": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Spiral Carve"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dark ultra omninight": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Elysium",
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "darkblood stormking": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "darklord": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "darkside": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "deathknight": {
+    "type": "Fighter",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "deathknight lord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "debris highlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Ravenous",
+        "Valiance",
+        "Forge"
+      ],
+      "required": [
+        "Anima",
+        "Valiance",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "defender": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "doom metal necro": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament",
+        "Vainglory"
+      ],
+      "helms": [
+        "Forge"
+      ],
+      "weapons": [
+        "Lacerate"
+      ],
+      "required": [
+        "Lacerate",
+        "Forge Helm",
+        "Lament"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "doomknight": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "doomknight overlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "draconic chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Smite"
+      ],
+      "required": [
+        "Smite",
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dragon knight": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dragon of time": {
+    "type": "Healer",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "dragon shinobi": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dragonlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "dragonslayer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "dragonslayer general": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory",
+        "Forge"
+      ],
+      "helms": [
+        "Anima",
+        "Forge"
+      ],
+      "weapons": [
+        "Valiance",
+        "Smite",
+        "Mana Vamp"
+      ],
+      "required": []
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "dragonsoul shinobi": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "drakel warlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "elemental dracomancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "empyrean chronomancer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "enchanted vampire lord": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "enforcer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "eternal chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Spiral Carve"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "eternal inversionist": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "evolved clawsuit": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "evolved dark caster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "evolved leprechaun": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "evolved pumpkin lord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "evolved shaman": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "exalted harbinger": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "exalted soul cleaver": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "firelord summoner": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "flame dragon warrior": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless"
+      ],
+      "required": [
+        "Avarice",
+        "Dauntless",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "frost spiritreaver": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "frostblood titan": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "frostval barbarian": {
+    "type": "Fighter",
+    "forge": {
+      "capes": [
+        "Absolution"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Absolution",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "glaceran warlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "glacial berserker": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Awe Blast"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "glacial berserker test": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "glacial warlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "great thief": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Dauntless"
+      ],
+      "required": [
+        "Dauntless",
+        "Vim",
+        "Lament"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "grim necromancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "grunge rocker": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "guardian": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "healer": {
+    "type": "Healer",
+    "forge": {
+      "capes": [
+        "None"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Valiance",
+        "Awe Blast"
+      ],
+      "required": []
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "healer (rare)": {
+    "type": "Healer",
+    "forge": {
+      "capes": [
+        "None"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Valiance",
+        "Awe Blast"
+      ],
+      "required": []
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "heavy metal necro": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "heavy metal rockstar": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "heroic naval commander": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "highseas commander": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "hobo highlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "horc evader": {
+    "type": "Thief",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Lacerate"
+      ],
+      "required": [
+        "Lacerate",
+        "Vim",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "immortal chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Spiral Carve"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "immortal dark caster": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "imperial chunin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "infinite dark caster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "infinite legion dark caster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "infinity knight": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Awe Blast"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "infinity titan": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "interstellar knight": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "king's echo": {
+    "type": "Healer",
+    "forge": {
+      "capes": [
+        "Lament",
+        "Vainglory"
+      ],
+      "helms": [
+        "Examen"
+      ],
+      "weapons": [
+        "Elysium",
+        "Mana Vamp"
+      ],
+      "required": [
+        "Valiance",
+        "Examen",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legendary elemental warrior": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Mana Vamp"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "legendary hero": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Absolution"
+      ],
+      "helms": [
+        "Forge"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Valiance",
+        "Forge Helm",
+        "Absolution"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "legendary naval commander": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "legion blademaster assassin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion doomknight": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion doomknight tester": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion evolved dark caster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion paladin": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion revenant": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion revenant (ioda)": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "legion revenant member test": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "legion swordmaster assassin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "leprechaun": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "lich": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Examen"
+      ],
+      "weapons": [
+        "Ravenous"
+      ],
+      "required": [
+        "Ravenous",
+        "Lament",
+        "Examen"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "lightcaster": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Lament",
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Praxis",
+        "Valiance"
+      ],
+      "required": [
+        "Lament",
+        "Praxis"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "lightcaster test": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "lightmage": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "lord of order": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Penitence"
+      ],
+      "helms": [
+        "Forge"
+      ],
+      "weapons": [
+        "Arcanas Concerto",
+        "Awe Blast"
+      ],
+      "required": [
+        "Awe",
+        "Forge Helm",
+        "Penitence"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "love caster": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "lycan": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "mage": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "mage (rare)": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "martial artist": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance",
+        "Smite"
+      ],
+      "required": [
+        "Dauntless",
+        "Valiance",
+        "Smite",
+        "Vainglory",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "master martial artist": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance",
+        "Smite"
+      ],
+      "required": [
+        "Dauntless",
+        "Valiance",
+        "Smite",
+        "Vainglory",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "master of moglins": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Penitence"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Acheron"
+      ],
+      "required": [
+        "Penitence",
+        "Acheron",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "master ranger": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "mechajouster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "mindbreaker": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "mystical dark caster": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "mythic elemental warrior": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Mana Vamp"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "naval commander": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "nechronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "ArcanasConcerto",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "necromancer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "necrotic chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "ArcanasConcerto",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "neo metal necro": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament",
+        "Vainglory"
+      ],
+      "helms": [
+        "Forge"
+      ],
+      "weapons": [
+        "Lacerate"
+      ],
+      "required": [
+        "Lacerate",
+        "Forge Helm",
+        "Lament"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "ninja": {
+    "type": "Thief",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "ninja (rare)": {
+    "type": "Thief",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "ninja warrior": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "no class": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "northlands monk": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "not a mod": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "nu metal necro": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "obsidian no class": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "obsidian paladin chronomancer": {
+    "type": "Healer",
+    "forge": {
+      "capes": [
+        "None"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Valiance"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "oracle": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "overworld chronomancer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "paladin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "paladin chronomancer": {
+    "type": "Healer",
+    "forge": {
+      "capes": [
+        "None"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Valiance"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "paladin high lord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "paladinslayer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "phantasm chronomancer": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Examen"
+      ],
+      "weapons": [
+        "Elysium",
+        "Ravenous"
+      ],
+      "required": [
+        "Elysium",
+        "Ravenous"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "phantom chronomancer": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Examen"
+      ],
+      "weapons": [
+        "Elysium",
+        "Ravenous"
+      ],
+      "required": [
+        "Elysium",
+        "Ravenous"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "pink romancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "pinkomancer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "pirate": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "prismatic clawsuit": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "protosartorium": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "psionic mindbreaker": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "pumpkin lord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "pyromancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "quantum chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "ranger": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "renegade": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "rogue": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "rogue (rare)": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "royal battlemage": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Lament",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "royal vampire lord": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "rustbucket": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "sakura cryomancer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "savage glaceran warlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Valiance"
+      ],
+      "required": [
+        "Vainglory",
+        "Valiance",
+        "Anima"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "scarlet sorceress": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Lament",
+        "Valiance",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "scion of flames": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory",
+        "Lament"
+      ],
+      "helms": [
+        "Pneuma",
+        "Forge"
+      ],
+      "weapons": [
+        "Ravenous",
+        "Valiance"
+      ],
+      "required": []
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "sentinel": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "shadow dragon shinobi": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "shadow ripper": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "shadow rocker": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "shadowflame dragonlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "shadowscythe general": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "shadowstalker of time": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Vainglory",
+        "Elysium",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "shadowwalker of time": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Vainglory",
+        "Elysium",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "shadowweaver of time": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Vainglory",
+        "Elysium",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "shaman": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Vainglory",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "silver paladin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "skycharged grenadier": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "skyguard grenadier": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "sorcerer": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "soul cleaver": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "sovereign of storms": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Vainglory",
+        "Forge"
+      ],
+      "helms": [
+        "Pneuma",
+        "Forge"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Ravenous",
+        "Forge"
+      ],
+      "required": [
+        "Vainglory",
+        "Dauntless",
+        "Ravenous",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "star captain": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "starlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "stonecrusher": {
+    "type": "Fighter",
+    "forge": {
+      "capes": [
+        "Absolution"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Valiance"
+      ],
+      "required": [
+        "Valiance",
+        "Anima",
+        "Absolution"
+      ]
+    },
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "swordmaster": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "swordmaster assassin": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "the collector": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "thief of hours": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "timekeeper": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Lacerate"
+      ],
+      "required": [
+        "Lacerate",
+        "Vim",
+        "Lament"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "timekiller": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Lament"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Lacerate"
+      ],
+      "required": [
+        "Lacerate",
+        "Vim",
+        "Lament"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "timeless chronomancer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "timeless dark caster": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "troll spellsmith": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "troubador of love": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "ultra elemental warrior": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Mana Vamp"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "ultra omniknight": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Elysium",
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "unchained rocker": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "unchained rockstar": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "undead goat": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "undead leperchaun": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "undeadslayer": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "underworld chronomancer": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Forge"
+      ],
+      "helms": [
+        "None"
+      ],
+      "weapons": [
+        "Spiral Carve"
+      ],
+      "required": [
+        "Forge Cape"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "unlucky leperchaun": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "unundead goat": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "vampire": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "vampire lord": {
+    "type": "Wizard",
+    "forge": {
+      "capes": [
+        "Avarice"
+      ],
+      "helms": [
+        "Pneuma"
+      ],
+      "weapons": [
+        "Elysium"
+      ],
+      "required": [
+        "Avarice",
+        "Elysium",
+        "Pneuma"
+      ]
+    },
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "verus doomknight": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima",
+        "Forge"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Ravenous"
+      ],
+      "required": [
+        "Ravenous",
+        "Forge Helm",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "vindicator of they": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Health Vamp"
+    }
+  },
+  "void highlord": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Ravenous",
+        "Valiance",
+        "Forge"
+      ],
+      "required": [
+        "Anima",
+        "Valiance",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "void highlord (ioda)": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Anima"
+      ],
+      "weapons": [
+        "Dauntless",
+        "Ravenous",
+        "Valiance",
+        "Forge"
+      ],
+      "required": [
+        "Anima",
+        "Valiance",
+        "Vainglory"
+      ]
+    },
+    "awe": {
+      "weapon": "Spiral Carve"
+    }
+  },
+  "void highlord tester": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "warlord": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "warrior": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "warrior (rare)": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "warriorscythe general": {
+    "type": "Lucky",
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  },
+  "witch": {
+    "type": "Wizard",
+    "awe": {
+      "weapon": "Awe Blast"
+    }
+  },
+  "yami no ronin": {
+    "type": "Lucky",
+    "forge": {
+      "capes": [
+        "Vainglory"
+      ],
+      "helms": [
+        "Vim"
+      ],
+      "weapons": [
+        "Praxis"
+      ],
+      "required": [
+        "Praxis",
+        "Vainglory",
+        "Vim"
+      ]
+    },
+    "awe": {
+      "weapon": "Mana Vamp"
+    }
+  }
+}

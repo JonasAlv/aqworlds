@@ -1,0 +1,398 @@
+name: Build Windows App
+
+on:
+  workflow_dispatch:
+    inputs:
+      include_cpu:
+        description: 'Include CPU render mode build'
+        required: true
+        default: true
+        type: boolean
+      include_direct:
+        description: 'Include Direct render mode build'
+        required: true
+        default: true
+        type: boolean
+      include_gpu:
+        description: 'Include GPU render mode build'
+        required: true
+        default: true
+        type: boolean
+      build_android:
+        description: 'Also package Android ARMv8 APK'
+        required: true
+        default: false
+        type: boolean
+      prerelease:
+        description: 'Mark release as pre-release'
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: windows-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build & Package
+    runs-on: windows-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out aqworlds
+        uses: actions/checkout@v4
+        with:
+          path: aqworlds
+
+      - name: Check out aqw-haxe-api
+        uses: actions/checkout@v4
+        with:
+          repository: JonasAlv/aqw-haxe-api
+          ref: main
+          path: aqw-haxe-api
+
+      - name: Check out aqw-haxe-ui
+        uses: actions/checkout@v4
+        with:
+          repository: JonasAlv/aqw-haxe-ui
+          ref: main
+          path: aqw-haxe-ui
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Haxe
+        uses: HaxeFoundation/setup-haxe@v2
+        with:
+          haxe-version: "4.3.6"
+
+      - name: Install Haxe libraries
+        shell: pwsh
+        run: |
+          & haxelib install hscript --always
+          if ($LASTEXITCODE -ne 0) { throw "Failed to install hscript." }
+
+      - name: Cache AIR SDK
+        id: cache-airsdk
+        uses: actions/cache@v4
+        with:
+          path: C:\AIR_SDK
+          key: airsdk-windows-51.4.1.1
+
+      - name: Set up AIR SDK
+        shell: pwsh
+        run: |
+          $airDir = "C:\AIR_SDK"
+          $ProgressPreference = 'SilentlyContinue'
+
+          if (-not (Test-Path "$airDir\bin\amxmlc.bat")) {
+            New-Item -ItemType Directory -Path $airDir -Force | Out-Null
+            $zipPath = Join-Path $env:RUNNER_TEMP "AIRSDK_Windows.zip"
+
+            try {
+              $urls = Invoke-RestMethod -Uri "https://api.airsdk.harman.com/releases/latest/urls"
+              $downloadUrl = "https://airsdk.harman.com" + $urls.AIR_Win + "?license=accepted"
+            } catch {
+              Write-Warning "Failed to query Harman latest URL API: $_"
+              $downloadUrl = "https://airsdk.harman.com/api/versions/51.4.1.1/sdks/AIRSDK_Windows.zip?license=accepted"
+            }
+
+            Write-Host "Downloading AIR SDK from $downloadUrl..."
+            Invoke-WebRequest -Uri $downloadUrl -OutFile $zipPath
+
+            Write-Host "Extracting AIR SDK to $airDir..."
+            & 7z x $zipPath "-o$airDir" -y | Out-Null
+            if ($LASTEXITCODE -ne 0) { throw "Failed to extract AIR SDK." }
+            Remove-Item -Path $zipPath -Force
+          } else {
+            Write-Host "AIR SDK restored from cache at $airDir."
+          }
+
+          "AIR_HOME=$airDir" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "$airDir\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Read Version Information
+        id: get-version
+        shell: pwsh
+        run: |
+          $xmlPath = Join-Path $env:GITHUB_WORKSPACE "aqworlds\loader\Desktop-app.xml"
+          $version = "1.1.0"
+          if (Test-Path $xmlPath) {
+            [xml]$xml = Get-Content $xmlPath
+            if ($xml.application.versionNumber) {
+              $version = $xml.application.versionNumber.Trim()
+            }
+          }
+          Write-Host "Detected version: $version"
+          "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+      - name: Build API, Standalone UI, and AirShell
+        shell: pwsh
+        run: |
+          $workspace = $env:GITHUB_WORKSPACE
+          $aqwDir = Join-Path $workspace "aqworlds"
+          $apiDir = Join-Path $workspace "aqw-haxe-api"
+          $uiDir = Join-Path $workspace "aqw-haxe-ui"
+          $loaderDir = Join-Path $aqwDir "loader"
+          $buildDir = Join-Path $aqwDir "build"
+          $staging = Join-Path $buildDir "staging"
+          $airBin = Join-Path $env:AIR_HOME "bin"
+          $amxmlc = Join-Path $airBin "amxmlc.bat"
+
+          function Invoke-Checked([string]$Executable, [string[]]$Arguments, [string]$Description) {
+            & $Executable @Arguments
+            if ($LASTEXITCODE -ne 0) { throw "$Description failed with exit code $LASTEXITCODE." }
+          }
+
+          # 1. Compile AqwApi.swc
+          Write-Host "=> [1/4] Compiling AqwApi (aqw-haxe-api)..."
+          Push-Location $apiDir
+          try { Invoke-Checked "haxe" @("build.hxml") "API compilation" }
+          finally { Pop-Location }
+
+          # 2. Compile ModUI-standalone.swc
+          Write-Host "=> [2/4] Compiling ModUI (aqw-haxe-ui)..."
+          Push-Location $uiDir
+          try { Invoke-Checked "haxe" @("build-standalone.hxml") "UI compilation" }
+          finally { Pop-Location }
+
+          # 3. Setup sandbox staging
+          Write-Host "=> [3/4] Setting up staging sandbox..."
+          if (Test-Path $staging) { Remove-Item -Path $staging -Recurse -Force }
+          New-Item -ItemType Directory -Path `
+            (Join-Path $staging "libs"), `
+            (Join-Path $staging "assets"), `
+            (Join-Path $staging "icons") -Force | Out-Null
+
+          Copy-Item -Path (Join-Path $loaderDir "src") -Destination (Join-Path $staging "src") -Recurse -Force
+          Copy-Item -Path (Join-Path $loaderDir "assets\*") -Destination (Join-Path $staging "assets") -Recurse -Force
+          Copy-Item -Path (Join-Path $loaderDir "icons\*") -Destination (Join-Path $staging "icons") -Recurse -Force
+          Copy-Item -Path (Join-Path $loaderDir "Desktop-app.xml") -Destination (Join-Path $staging "Desktop-app.xml") -Force
+          Copy-Item -Path (Join-Path $loaderDir "Mobile-app.xml") -Destination (Join-Path $staging "Mobile-app.xml") -Force
+
+          # Copy native libraries if present
+          if (Test-Path (Join-Path $loaderDir "libs")) {
+            Copy-Item -Path (Join-Path $loaderDir "libs\*") -Destination (Join-Path $staging "libs") -Recurse -Force
+          }
+
+          # Place compiled SWCs into staging libs
+          Copy-Item -Path (Join-Path $apiDir "bin\AqwApi.swc") -Destination (Join-Path $staging "libs\AqwApi.swc") -Force
+          Copy-Item -Path (Join-Path $uiDir "bin\ModUI-standalone.swc") -Destination (Join-Path $staging "libs\ModUI.swc") -Force
+
+          # 4. Compile AirShell.swf
+          Write-Host "=> [4/4] Compiling AirShell.swf with AqwApi and ModUI..."
+          Invoke-Checked $amxmlc @(
+            "+configname=air",
+            "-strict=false",
+            "-debug=true",
+            "-default-size", "960", "550",
+            "-default-frame-rate", "120",
+            "-default-background-color", "0x000000",
+            "-library-path+=$(Join-Path $staging 'libs')",
+            "-include-libraries+=$(Join-Path $staging 'libs\AqwApi.swc')",
+            "-include-libraries+=$(Join-Path $staging 'libs\ModUI.swc')",
+            "-source-path+=$(Join-Path $staging 'src')",
+            "-output", (Join-Path $staging "AirShell.swf"),
+            (Join-Path $staging "src\AirShell.as")
+          ) "AirShell.swf compilation"
+
+          Copy-Item -Path (Join-Path $staging "AirShell.swf") -Destination (Join-Path $buildDir "AirShell.swf") -Force
+          Write-Host "=> Successfully compiled AirShell.swf."
+
+      - name: Package Windows Bundles (and optional APK)
+        id: package-bundles
+        shell: pwsh
+        env:
+          KEYSTORE_P12_BASE64: ${{ secrets.KEYSTORE_P12_BASE64 }}
+          KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
+        run: |
+          $workspace = $env:GITHUB_WORKSPACE
+          $aqwDir = Join-Path $workspace "aqworlds"
+          $buildDir = Join-Path $aqwDir "build"
+          $staging = Join-Path $buildDir "staging"
+          $loaderDir = Join-Path $aqwDir "loader"
+          $artifactsDir = Join-Path $aqwDir "artifacts"
+          New-Item -ItemType Directory -Path $artifactsDir -Force | Out-Null
+
+          $airBin = Join-Path $env:AIR_HOME "bin"
+          $adt = Join-Path $airBin "adt.bat"
+
+          # 1. Certificate setup
+          $certificate = Join-Path $env:RUNNER_TEMP "aqworlds-signing.p12"
+          $certPass = "temporary-ci-password"
+          if ($env:KEYSTORE_P12_BASE64) {
+            Write-Host "=> Using persistent signing certificate from repository secret..."
+            [System.IO.File]::WriteAllBytes($certificate, [System.Convert]::FromBase64String($env:KEYSTORE_P12_BASE64))
+            if ($env:KEYSTORE_PASS) { $certPass = $env:KEYSTORE_PASS }
+          } else {
+            Write-Host "=> Generating temporary signing certificate..."
+            & $adt -certificate -cn "AQWorlds Mod CI" 2048-RSA $certificate $certPass
+            if ($LASTEXITCODE -ne 0) { throw "Failed to generate temporary signing certificate." }
+          }
+
+          # 2. Prepare descriptor
+          $version = "${{ steps.get-version.outputs.version }}"
+          if (-not $version) { $version = "1.1.0" }
+          $date = Get-Date -Format "dd-MM-yy"
+
+          $rawDescriptor = Get-Content (Join-Path $loaderDir "Desktop-app.xml") -Raw
+          $cleanDescriptor = [System.Text.RegularExpressions.Regex]::Replace(
+            $rawDescriptor,
+            "<versionNumber>.*?</versionNumber>",
+            "<versionNumber>$version</versionNumber>"
+          )
+
+          # Modes to build: cpu, direct, gpu
+          $modes = @()
+          if ("${{ github.event.inputs.include_cpu }}" -ne "false") {
+            $modes += "cpu"
+          }
+          if ("${{ github.event.inputs.include_direct }}" -ne "false") {
+            $modes += "direct"
+          }
+          if ("${{ github.event.inputs.include_gpu }}" -ne "false") {
+            $modes += "gpu"
+          }
+          if ($modes.Count -eq 0) {
+            $modes = @("cpu", "direct", "gpu")
+          }
+
+          foreach ($mode in $modes) {
+            Write-Host "=> Packaging Windows x64 bundle ($mode render)..."
+            $modeDescriptor = [System.Text.RegularExpressions.Regex]::Replace(
+              $cleanDescriptor,
+              "<renderMode>.*?</renderMode>",
+              "<renderMode>$mode</renderMode>"
+            )
+            $descriptorFile = Join-Path $buildDir "Desktop-app-$mode.xml"
+            Set-Content -Path $descriptorFile -Value $modeDescriptor -Encoding utf8
+
+            $bundleDir = Join-Path $buildDir "AQWorlds-Windows-x64-$mode"
+            if (Test-Path $bundleDir) { Remove-Item -Path $bundleDir -Recurse -Force }
+
+            # Package files: AirShell.swf + assets + icons (+ gamefiles if present)
+            $packageArgs = @(
+              "-package",
+              "-storetype", "pkcs12",
+              "-keystore", $certificate,
+              "-storepass", $certPass,
+              "-target", "bundle",
+              "-arch", "x64",
+              $bundleDir,
+              $descriptorFile,
+              "-C", $buildDir, "AirShell.swf",
+              "-C", $staging, "assets", "icons"
+            )
+
+            if (Test-Path (Join-Path $staging "gamefiles")) {
+              $packageArgs += @("-C", $staging, "gamefiles")
+            }
+
+            & $adt @packageArgs
+            if ($LASTEXITCODE -ne 0) { throw "AIR bundle packaging failed for mode $mode." }
+
+            $zipName = "aqworlds-$version-$date-x64-$mode.zip"
+            $zipPath = Join-Path $artifactsDir $zipName
+            if (Test-Path $zipPath) { Remove-Item -Path $zipPath -Force }
+
+            Write-Host "   Compressing into $zipName..."
+            Compress-Archive -Path $bundleDir -DestinationPath $zipPath -CompressionLevel Optimal
+          }
+
+          # Optional Android package
+          if ("${{ github.event.inputs.build_android }}" -eq "true") {
+            Write-Host "=> Packaging Android ARMv8 APKs..."
+            foreach ($mode in $modes) {
+              $apkName = "aqworlds-$version-$date-armv8-$mode.apk"
+              $apkPath = Join-Path $artifactsDir $apkName
+
+              $rawMobileXml = Get-Content (Join-Path $loaderDir "Mobile-app.xml") -Raw
+              $mobileXml = [System.Text.RegularExpressions.Regex]::Replace(
+                $rawMobileXml,
+                "<versionNumber>.*?</versionNumber>",
+                "<versionNumber>$version</versionNumber>"
+              )
+              $mobileXml = [System.Text.RegularExpressions.Regex]::Replace(
+                $mobileXml,
+                "<renderMode>.*?</renderMode>",
+                "<renderMode>$mode</renderMode>"
+              )
+              $mobileXmlPath = Join-Path $buildDir "Mobile-app-armv8-$mode.xml"
+              Set-Content -Path $mobileXmlPath -Value $mobileXml -Encoding utf8
+
+              Write-Host "   -> Packaging $apkName (arch: armv8, mode: $mode)..."
+              & $adt -package `
+                -target apk-captive-runtime `
+                -arch armv8 `
+                -storetype PKCS12 `
+                -keystore $certificate -storepass $certPass `
+                $apkPath $mobileXmlPath `
+                -C $buildDir AirShell.swf `
+                -C $staging assets icons
+
+              if ($LASTEXITCODE -ne 0) { throw "Android APK packaging failed for mode $mode." }
+            }
+          }
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: AQWorlds-Artifacts-${{ steps.get-version.outputs.version }}-${{ github.run_number }}
+          path: aqworlds/artifacts/*
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          try {
+            $date = Get-Date -Format "dd-MM-yy"
+            $tagDate = Get-Date -Format "yyyyMMdd"
+            $version = "${{ steps.get-version.outputs.version }}"
+            $artifactsDir = Join-Path $env:GITHUB_WORKSPACE "aqworlds\artifacts"
+            $files = Get-ChildItem -Path $artifactsDir -File | ForEach-Object { $_.FullName }
+
+            if ($files.Count -eq 0) {
+              Write-Warning "No artifacts found in $artifactsDir to publish."
+              return
+            }
+
+            $tag = "v$version-$tagDate-run${{ github.run_number }}"
+            $title = "AQWorlds Mod $version ($date)"
+            $notes = @"
+          ## AQWorlds Client Release
+          - **Client Version**: $version
+          - **Build Date**: $date
+          - **Commit**: $env:GITHUB_SHA
+
+          ### Included Artifacts:
+          $(Get-ChildItem -Path $artifactsDir -File | ForEach-Object { "- **`$($_.Name)`** ($([math]::Round($_.Length / 1MB, 2)) MB)" } | Out-String)
+          "@
+
+            $cmdArgs = @(
+              "release", "create", $tag
+            ) + $files + @(
+              "--repo", $env:GITHUB_REPOSITORY,
+              "--target", $env:GITHUB_SHA,
+              "--title", $title,
+              "--notes", $notes
+            )
+
+            if ("${{ github.event.inputs.prerelease }}" -eq "true") {
+              $cmdArgs += "--prerelease"
+            }
+
+            Write-Host "Creating GitHub Release $tag..."
+            & gh @cmdArgs
+          } catch {
+            Write-Warning "GitHub release publishing step failed: $_"
+          }

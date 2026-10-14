@@ -1,0 +1,2105 @@
+{
+  "ArchMage": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1[!aura(target:incinerate)] > 4[hp > 70% & mp < 70% & !aura(self:Corporeal Ascenion)] > 2[mp < 30%] > 3"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[!aura(self:Corporeal Ascenion)] > 0 > 2"
+    }
+  },
+  "Abyssal Angel": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 1 > 3[hp < 50%]"
+    }
+  },
+  "Abyssal Angel's Shadow": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 1 > 3[hp < 50%]"
+    }
+  },
+  "Acolyte": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 2 > 2 > 1"
+    }
+  },
+  "Alpha DOOMmega": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 1 > 2[hp < 50%]"
+    }
+  },
+  "Alpha Omega": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 1 > 2[hp < 50%]"
+    }
+  },
+  "Alpha Pirate": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "Arachnomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2 > 4 > 1 > 3 > 2"
+    }
+  },
+  "Arcana Invoker": {
+    "Solo": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1[!aura(self:XXI - The World) & !aura(self:0 - The Fool)] > 1[aura(self:XX - Judgement)] > 1[aura(self:End of the World) >= 22] > 2 > 3 > 2 > 4"
+    }
+  },
+  "Arcane Dark Caster": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4[wait(5000ms)] > 3 > 3 > 2 > 1"
+    }
+  },
+  "ArchFiend": {
+    "Solo": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 1 > 2"
+    }
+  },
+  "ArchPaladin": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2[hp < 70%] > 3 > 2[hp < 70%] > 4 > 2[hp < 70%] > 1 > 2[hp < 70%] > 1 > 2[hp < 70%] > 1 > 2[hp < 70%]"
+    },
+    "Atk": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3[!aura(target:Righteous Seal)] > 4[aura(target:Righteous Seal) >= 1] > 2[hp < 70%] > 1"
+    }
+  },
+  "Artifact Hunter": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 2 > 1"
+    }
+  },
+  "Assassin": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 2"
+    }
+  },
+  "Barber": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "Bard": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 1"
+    }
+  },
+  "Battle Bard": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 1"
+    }
+  },
+  "BattleMage": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4 > 2 > 3 > 1"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 4 > 2 > 3 > 4"
+    }
+  },
+  "BattleMage of Love": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4 > 2 > 3 > 1"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 4 > 2 > 3 > 4"
+    }
+  },
+  "Beast Warrior": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "BeastMaster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Berserker": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 2"
+    }
+  },
+  "Beta Berserker": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 2"
+    }
+  },
+  "BladeMaster": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 4"
+    }
+  },
+  "BladeMaster Assassin": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 4"
+    }
+  },
+  "Blaze Binder": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 1 > 3 > 4"
+    }
+  },
+  "Blood Ancient": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 2 > 1"
+    }
+  },
+  "Blood Sorceress": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[hp > 70% | !aura(self:Mirrored Pact) | !aura(self:Arcane Pact)] > 2 > 1[hp > 70%] > 3[hp < 70%]"
+    }
+  },
+  "Blood Titan": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 3 > 2"
+    }
+  },
+  "CardClasher": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 2"
+    }
+  },
+  "Chaos Avenger": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[wait(100ms) & mp > 50%] > 3[wait(100ms) & mp > 50%] > 1[wait(100ms) & mp > 50%] > 2[wait(100ms) & mp > 50%]"
+    },
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4[mp > 50%] > 3[mp > 50%] > 1[mp > 50%] > 2[mp > 50%]"
+    }
+  },
+  "Chaos Avenger Member Preview": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4[mp > 50%] > 3[mp > 50%] > 1[mp > 50%] > 2[mp > 50%]"
+    }
+  },
+  "Chaos Champion Prime": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2"
+    }
+  },
+  "Chaos Shaper": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 1 > 3 > 4"
+    }
+  },
+  "Chaos Slayer Berserker": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4"
+    }
+  },
+  "Chaos Slayer Cleric": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4"
+    }
+  },
+  "Chaos Slayer Mystic": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4"
+    }
+  },
+  "Chaos Slayer Thief": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4"
+    }
+  },
+  "Corrupted Chronomancer": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 3 > 1 > 1 > 1 > 3 > 1 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 1 > 3 > 1 > 1 > 3 > 1 > 4 > 2"
+    }
+  },
+  "Chrono Assassin": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 2 > 3 > 1 > 2 > 3 > 1 > 2 > 3 > 1 > 2 > 3 > 1 > 2 > 3 > 3 > 2 > 1 > 2"
+    }
+  },
+  "Chrono Chaorruptor": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 3 > 1 > 1 > 1 > 3 > 1 > 4 > 3 > 1 > 1 > 1 > 3 > 1 > 4"
+    }
+  },
+  "Chrono Commandant": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 1 > 1 > 1 > 2 > 3"
+    }
+  },
+  "Chrono DataKnight": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 1 > 2 > 3 > 1 > 2 > 3 > 1 > 4"
+    }
+  },
+  "Chrono DragonKnight": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 1 > 1 > 1 > 1 > 4 > 2 > 3"
+    }
+  },
+  "Chrono ShadowSlayer": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1[aura(self:Rounds Empty) <= 1] > 3 > 3 > 3 > 3 > 3 > 3 > 2 > 4 > 0[mp > 15% & aura(self:Gunslinger Stance) >= 1]"
+    },
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 3 > 3 > 3 > 3 > 3 > 4"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 2 > 3 > 2 > 3 > 2 > 3 > 2 > 3 > 4 > 1"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1[aura(self:Rounds Empty) >= 1] > 3"
+    }
+  },
+  "Chrono ShadowHunter": {
+    "dodge[ether]": {
+      "autoattack": false,
+      "mode": "WaitForCooldown",
+      "combo": "1 > 2 > 3[counter] > 2 > 3[counter] > 2 > 3[counter] > 4",
+      "resetComboOnTargetChange": true,
+      "timeout": 0
+    },
+    "farm[base]": {
+      "autoattack": false,
+      "mode": "WaitForCooldown",
+      "combo": "1 > 2 > 3 > 3 > 3 > 3 > 4",
+      "resetComboOnTargetChange": true,
+      "timeout": 0
+    },
+    "farm[ether]": {
+      "autoattack": false,
+      "mode": "WaitForCooldown",
+      "combo": "1 > 2 > 3 > 3 > 3 > 3 > 3 > 4",
+      "resetComboOnTargetChange": true,
+      "timeout": 0
+    },
+    "dodge[base]": {
+      "autoattack": false,
+      "mode": "WaitForCooldown",
+      "combo": "1 > 2 > 3[counter] > 2 > 3[counter] > 2 > 4",
+      "resetComboOnTargetChange": true,
+      "timeout": 0
+    },
+    "autoattack": false
+  },
+  "Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 1 > 1 > 1 > 2 > 1 > 1 > 1 > 1 > 1 > 3"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 120,
+      "combo": "1 > 2 > 4 > 1 > 1 > 1 > 1 > 2[hp < 60%] > 1 > 1 > 1 > 3"
+    }
+  },
+  "Chronocommander": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 1 > 1 > 1 > 2 > 3"
+    }
+  },
+  "Chronomancer Prime": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 1 > 1 > 1 > 2 > 1 > 1 > 1 > 1 > 1 > 3"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 120,
+      "combo": "1 > 2 > 4 > 1 > 1 > 1 > 1 > 2[hp < 60%] > 1 > 1 > 1 > 3"
+    }
+  },
+  "Chunin": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 4 > 3"
+    }
+  },
+  "Classic Alpha Pirate": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "Classic Barber": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "Classic Defender": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 2 > 4 > 3"
+    }
+  },
+  "Classic DoomKnight": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 2 > 3 > 1 > 4 > 1 > 3[hp < 50%]"
+    }
+  },
+  "Doom Metal Necro": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 4[hp > 35%] > 2"
+    }
+  },
+  "Classic Dragonlord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 1 > 4"
+    }
+  },
+  "Classic Exalted Soul Cleaver": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Classic Guardian": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Classic Legion DoomKnight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Classic Paladin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Classic Pirate": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Classic Soul Cleaver": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "ClawSuit": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Continuum Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 1 > 1 > 1 > 3 > 1 > 4"
+    }
+  },
+  "Cryomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4 > 2 > 1 > 3[hp < 50%] > 2 > 1 > 2"
+    }
+  },
+  "Cryomancer Mini Pet Coming Soon": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4 > 1 > 2 > 1 > 2"
+    }
+  },
+  "Daimon": {
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 3 > 2[hp < 50%]"
+    }
+  },
+  "Dark BattleMage": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 4 > 2 > 3 > 4"
+    }
+  },
+  "Dark Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Dark Chaos Berserker": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2"
+    }
+  },
+  "Dark Cryomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4 > 1 > 2 > 1 > 2"
+    }
+  },
+  "Dark Harbinger": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Dark Legendary Hero": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4[hp > 50%] > 2 > 3 > 2"
+    }
+  },
+  "Dark Lord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4[hp < 40%]"
+    }
+  },
+  "Dark Master of Moglins": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 2 > 3 > 1 > 4"
+    }
+  },
+  "Dark Metal Necro": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4[hp > 50%] > 2 > 3 > 2"
+    }
+  },
+  "Dark Ultra OmniNight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Darkblood StormKing": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Darkside": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "DeathKnight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "DeathKnight Lord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Defender": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "DoomKnight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "DoomKnight OverLord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Dragon Knight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Dragon of Time": {
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4 > 2"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 2 > 4"
+    }
+  },
+  "Dragon Shinobi": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1[!aura(self:Shadow Soul)] > 2[hp < 30% & mp > 70% & !aura(self:Shadow Soul)] > 3[hp > 30% & mp < 10%] > 4[!aura(self:Shadow Soul)]"
+    }
+  },
+  "Dragonlord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Dragonslayer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Dragonslayer General": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4[aura(self:Forgone Conclusion) <= 1]"
+    }
+  },
+  "DragonSoul Shinobi": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1[!aura(self:Shadow Soul)] > 2[hp < 30% & mp > 70% & !aura(self:Shadow Soul)] > 3[hp > 30% & mp < 10%] > 4[!aura(self:Shadow Soul)]"
+    }
+  },
+  "Drakel Warlord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Drakkar Knight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Elemental Dracomancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 4 > 2 > 1"
+    }
+  },
+  "Empyrean Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 2 > 3"
+    }
+  },
+  "Enchanted Vampire Lord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 3 > 1 > 1 > 3"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 1 > 3"
+    }
+  },
+  "Enforcer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Eternal Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 2 > 3"
+    }
+  },
+  "Eternal Inversionist": {
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 3"
+    }
+  },
+  "Evolved ClawSuit": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 4 > 1 > 3 > 1 > 1"
+    }
+  },
+  "Evolved Dark Caster": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 2 > 1"
+    }
+  },
+  "Evolved Leprechaun": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 2"
+    }
+  },
+  "Evolved Pumpkin Lord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 2 > 1"
+    }
+  },
+  "Evolved Shaman": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 2 > 1"
+    }
+  },
+  "Exalted Harbinger": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 3 > 1 > 2 > 3 > 1 > 2 > 4 > 1 > 2 > 3 > 3"
+    }
+  },
+  "Exalted Soul Cleaver": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 2 > 2 > 3"
+    }
+  },
+  "FireLord Summoner": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4"
+    }
+  },
+  "Flame Dragon Warrior": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 1 > 2 > 4 > 3"
+    }
+  },
+  "Frostblood Titan": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 3 > 2"
+    }
+  },
+  "Frost SpiritReaver": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 2 > 1 > 3 > 1 > 3 > 1 > 2 > 1 > 3 > 1 > 3 > 1 > 3 > 2 > 1 > 3 > 4 > 1 > 3"
+    }
+  },
+  "Frostval Barbarian": {
+    "Supp": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 1 > 2"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4 > 1 > 4 > 2 > 4"
+    }
+  },
+  "Giftbox": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Glacial Berserker": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2 > 4"
+    }
+  },
+  "Glacial Berserker Test": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2 > 4"
+    }
+  },
+  "Glacial Warlord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 1 > 1 > 1 > 2 > 3 > 4"
+    }
+  },
+  "Glaceran Warlord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 1 > 1 > 1 > 2 > 3 > 4"
+    }
+  },
+  "Savage Glaceran Warlord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 1 > 1 > 1 > 2 > 3 > 4"
+    }
+  },
+  "Dark Glaceran Warlord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 1 > 1 > 1 > 2 > 3 > 4"
+    }
+  },
+  "Great Thief": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 3 > 4 > 1[mp > 50%]"
+    }
+  },
+  "Grim Necromancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Grunge Rocker": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Guardian": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Healer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2[hp < 50%] > 3[hp < 50% & mp > 50%] > 4"
+    }
+  },
+  "Healer (Rare)": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2[hp < 50%] > 3 > 4"
+    }
+  },
+  "Heavy Metal Necro": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4[hp > 50%] > 2 > 3 > 2"
+    }
+  },
+  "Heavy Metal Rockstar": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 4[hp > 50%] > 2 > 3 > 2"
+    }
+  },
+  "Heroic Naval Commander": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[wait(1000ms)] > 4 > 2 > 1"
+    }
+  },
+  "HighSeas Commander": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 1 > 4 > 2 > 1 > 1"
+    }
+  },
+  "Hobo Highlord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1"
+    }
+  },
+  "Horc Evader": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 1 > 3 > 4"
+    }
+  },
+  "Hollowborn Vindicator Member Preview": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Hollowborn Vindicator": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Immortal Dark Caster": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 2 > 1 > 2 > 1 > 3 > 4"
+    }
+  },
+  "Immortal Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 4 > 1 > 2 > 3"
+    }
+  },
+  "Imperial Chunin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Infinite Dark Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Infinite Legion Dark Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Infinity Titan": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4"
+    },
+    "Solo": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[mp > 50%] > 2 > 3[hp < 50%] > 2 > 3[hp < 50%] > 1 > 1"
+    },
+    "Supp": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 2 > 4 > 1"
+    }
+  },
+  "Infinity Knight": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 1 > 1 > 1 > 2 > 1 > 1 > 1 > 2 > 4 > 3"
+    }
+  },
+  "Interstellar Knight": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 1 > 1 > 1 > 2 > 1 > 1 > 1 > 2 > 4 > 3"
+    }
+  },
+  "King's Echo": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 0,
+      "combo": "3[mp >= 90%] > 1 > 2 > 1 > 2 > 1 > 2 > 1 > 4[mp < 20%]"
+    }
+  },
+  "Legendary Elemental Warrior": {
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 1 > 2 > 4 > 1 > 3 > 2 > 1 > 4 > 2"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2 > 1 > 2 > 3"
+    },
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 1 > 2 > 4 > 1 > 3 > 2 > 1 > 4 > 2"
+    }
+  },
+  "Legendary ArchFiend": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legendary Hero": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legendary Naval Commander": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[wait(1000ms)] > 4 > 2 > 1"
+    }
+  },
+  "Legion BladeMaster Assassin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legion DoomKnight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legion DoomKnight Tester": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legion Evolved Dark Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legion Paladin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Legion Revenant": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 4 > 1 > 2"
+    }
+  },
+  "Legion Revenant Member Test": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 4 > 1 > 2"
+    }
+  },
+  "Legion SwordMaster Assassin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Leprechaun": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Lich": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 4 > 2 > 4 > 1 > 2 > 4 > 1 > 2 > 4 > 1 > 2"
+    }
+  },
+  "LightCaster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4"
+    }
+  },
+  "LightCaster Test": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 4 > 1 > 2 > 1 > 2 > 1 > 2"
+    }
+  },
+  "LightMage": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4 > 1 > 2"
+    }
+  },
+  "Lord Of Order": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "0 > 2 > 4 > 1 > 3"
+    }
+  },
+  "Love Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Lycan": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 2 > 1 > 2 > 1"
+    }
+  },
+  "Mage": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 1 > 3"
+    }
+  },
+  "Mage (Rare)": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 1 > 3"
+    }
+  },
+  "Master of Moglins": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 2 > 3 > 1 > 4"
+    }
+  },
+  "Master Ranger": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4[hp < 50%]"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 1 > 1 > 1 > 1 > 1 > 2"
+    }
+  },
+  "MechaJouster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "MindBreaker": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Master Martial Artist": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 2 > 1"
+    }
+  },
+  "Martial Artist": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 2 > 1"
+    }
+  },
+  "Mystical Dark Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Mythic Elemental Warrior": {
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 1 > 2 > 4 > 1 > 3 > 2 > 1 > 4 > 2"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2 > 1 > 2 > 3"
+    }
+  },
+  "Naval Commander": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[wait(1000ms)] > 4 > 2 > 1"
+    }
+  },
+  "Nechronomancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[hp < 60%] > 3 > 2 > 1"
+    }
+  },
+  "Necrotic Chronomancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[hp < 60%] > 3 > 2 > 1"
+    }
+  },
+  "Necromancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3[mp < 25% & hp < 30%] > 4"
+    }
+  },
+  "Neo Metal Necro": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Ninja": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 3 > 1 > 3 > 1"
+    }
+  },
+  "Ninja Warrior": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Northlands Monk": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "NOT A MOD": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Nu Metal Necro": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Oracle": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 2[hp < 50% & mp > 50%]"
+    }
+  },
+  "Overworld Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "5 > 2 > 3 > 1 > 1 > 1 > 3 > 1 > 4 > 3 > 1 > 1 > 1 > 3 > 1 > 4"
+    }
+  },
+  "Paladin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Paladin Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[hp < 30% & mp > 95%] > 2[hp < 60% & mp > 75%] > 1 > 1 > 1 > 1 > 4"
+    }
+  },
+  "Phantom Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 2 > 1 > 2 > 1 > 2 > 1 > 3 > 1 > 3 > 2 > 4"
+    }
+  },
+  "Phantasm Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 2 > 1 > 2 > 1 > 2 > 1 > 3 > 1 > 3 > 2 > 4"
+    }
+  },
+  "Obsidian Paladin Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[hp < 30% & mp > 95%] > 2[hp < 60% & mp > 75%] > 1 > 1 > 1 > 1 > 4"
+    }
+  },
+  "Obsidian No Class": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1"
+    }
+  },
+  "Paladin Highlord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2[hp < 60%]"
+    }
+  },
+  "PaladinSlayer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Pink Romancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Pinkomancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3[mp < 25% & hp < 30%] > 4"
+    }
+  },
+  "Pirate": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Prismatic ClawSuit": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "ProtoSartorium": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Psionic MindBreaker": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2[mp < 25%] > 3 > 1 > 4"
+    }
+  },
+  "Pumpkin Lord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "PvP Test  |  Bard": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "PvP Test  |  Healer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "Pyromancer": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 4 > 2 > 3"
+    }
+  },
+  "Renegade": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Rogue": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 4"
+    }
+  },
+  "Rogue (Rare)": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 4"
+    }
+  },
+  "Royal BattleMage": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Royal Vampire Lord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 3 > 1 > 1 > 3"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 1 > 3"
+    }
+  },
+  "Rustbucket": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4"
+    }
+  },
+  "Quantum Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 1 > 1 > 1 > 3 > 1 > 4"
+    }
+  },
+  "Sakura Cryomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 1 > 2 > 4 > 1 > 2 > 1 > 2"
+    }
+  },
+  "Scarlet Sorceress": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[hp > 70% | aura(self:Mirrored Pact) | !aura(self:Arcane Pact)] > 2 > 1[hp > 70%] > 3[hp < 70%]"
+    }
+  },
+  "Sentinel": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Shadow Dragon Shinobi": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1[!aura(self:Shadow Soul)] > 2[hp < 30% & mp > 70% & !aura(self:Shadow Soul)] > 3[hp > 30% & mp < 10%] > 4[!aura(self:Shadow Soul)]"
+    }
+  },
+  "Shadow Ripper": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Shadow Rocker": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "ShadowFlame DragonLord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "ShadowScythe General": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "ShadowStalker of Time": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4 > 1 > 2 > 1 > 2 > 1 > 4 > 2 > 3 > 1 > 2 > 1 > 2"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4 > 2 > 1 > 2 > 1"
+    }
+  },
+  "ShadowWalker of Time": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4 > 1 > 2 > 1 > 2 > 1 > 4 > 2 > 3 > 1 > 2 > 1 > 2"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4 > 2 > 1 > 2 > 1"
+    }
+  },
+  "ShadowWeaver of Time": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4 > 1 > 2 > 1 > 2 > 1 > 4 > 2 > 3 > 1 > 2 > 1 > 2"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4 > 2 > 1 > 2 > 1"
+    }
+  },
+  "Shaman": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4 > 1 > 2 > 3"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 1 > 2 > 1 > 2"
+    },
+    "Solo": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4 > 1 > 2 > 1 > 2 > 1 > 2 > 3"
+    }
+  },
+  "Silver Paladin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "SkyCharged Grenadier": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "SkyGuard Grenadier": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Sorcerer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 4 > 4 > 2 > 1 > 3"
+    }
+  },
+  "Sovereign of Storms": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 1 > 1 > 1 > 1 > 1 > 1 > 1 > 4"
+    }
+  },
+  "Soul Cleaver": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Star Captain": {
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 300,
+      "combo": "2 > 1 > 2 > 3 > 4 > 2"
+    },
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 300,
+      "combo": "3 > 1 > 2 > 3 > 4 > 3"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 300,
+      "combo": "1 > 1 > 2 > 3 > 4 > 1"
+    }
+  },
+  "StarLord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "StoneCrusher": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 2 > 1 > 4"
+    },
+    "Solo": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "4[mp > 50%] > 2 > 3[hp < 50%] > 1"
+    },
+    "Supp": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3 > 2 > 4 > 1"
+    }
+  },
+  "SwordMaster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "SwordMaster Assassin": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "The Collector": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1[wait(2000ms)] > 3 > 4 > 1"
+    }
+  },
+  "Thief of Hours": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 1 > 3 > 2"
+    }
+  },
+  "TimeKeeper": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 1 > 1 > 4 > 3 > 2 > 1 > 1 > 4 > 1 > 2 > 1 > 1 > 3"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 1 > 1 > 3"
+    }
+  },
+  "TimeKiller": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 1 > 1 > 4 > 3 > 2 > 1 > 1 > 4 > 1 > 2 > 1 > 1 > 3"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 1 > 1 > 1 > 3"
+    }
+  },
+  "Timeless Chronomancer": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 3 > 1 > 1 > 1 > 3 > 1 > 4"
+    },
+    "Farm": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 3 > 1 > 1 > 3 > 1 > 1 > 3 > 1 > 4 > 2"
+    }
+  },
+  "Timeless Dark Caster": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Troll Spellsmith": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Troubador of Love": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Ultra Elemental Warrior": {
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 4 > 1 > 2 > 4 > 1 > 3 > 2 > 1 > 4 > 2"
+    },
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2 > 1 > 2 > 3"
+    }
+  },
+  "Ultra OmniKnight": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Underworld Chronomancer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "4 > 2 > 3 > 1 > 1 > 1 > 3 > 1 > 4 > 3 > 1 > 1 > 1 > 3 > 1 > 4"
+    }
+  },
+  "Unchained Rocker": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Unchained Rockstar": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Undead Goat": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4[hp > 50%] > 2 > 1"
+    }
+  },
+  "Unundead Goat": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 4[hp > 50%] > 2 > 1"
+    }
+  },
+  "Undead Leperchaun": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "UndeadSlayer": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2[hp < 50%]"
+    }
+  },
+  "Unlucky Leperchaun": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Vampire": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 3 > 1"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 1 > 3"
+    }
+  },
+  "Vampire Lord": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 4 > 3 > 1 > 1 > 3"
+    },
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2 > 3 > 1 > 1 > 3"
+    }
+  },
+  "Verus DoomKnight": {
+    "Def": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 3 > 2 > 1 > 3 > 4 > 2 > 3 > 1 > 2 > 3 > 4"
+    },
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 1 > 2 > 4 > 3 > 2 > 1 > 3 > 2 > 4"
+    }
+  },
+  "Vindicator Of They": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "1[wait(2000ms)] > 3 > 4 > 1"
+    }
+  },
+  "Void Highlord": {
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[hp > 50%] > 4 > 2 > 1[hp > 30%] > 3[hp > 90%] > 2 > 1[hp > 30%] > 3[hp > 50%] > 2 > 1[hp > 30%]"
+    },
+    "Def": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 4 > 3[hp > 90%]"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3[hp > 50%] > 2 > 4 > 1[hp > 30%]"
+    }
+  },
+  "Void Highlord (IoDA)": {
+    "Atk": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3[hp > 50%] > 4 > 2 > 1[hp > 30%] > 3[hp > 50%] > 2 > 1[hp > 30%] > 3[hp > 50%] > 2 > 1[hp > 30%]"
+    },
+    "Def": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 4 > 3[hp > 90%]"
+    },
+    "Farm": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "3[hp > 50%] > 2 > 4 > 1[hp > 30%]"
+    }
+  },
+  "Void Highlord Tester": {
+    "Base": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "3 > 2 > 4 > 3 > 2 > 1 > 3 > 2 > 1"
+    },
+    "Def": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 4 > 3[hp > 90%]"
+    }
+  },
+  "Warlord": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Warrior": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Warrior (Rare)": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "WarriorScythe General": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Witch": {
+    "Base": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 3 > 4"
+    }
+  },
+  "Yami no Ronin": {
+    "Solo": {
+      "mode": "WaitForCooldown",
+      "timeout": 100,
+      "combo": "2[mp > 60%] > 1 > 1 > 4 > 1 > 1 > 4"
+    },
+    "Def": {
+      "mode": "UseIfAvailable",
+      "timeout": 100,
+      "combo": "1 > 2 > 4"
+    }
+  }
+}
