@@ -23,6 +23,21 @@ on:
         required: true
         default: false
         type: boolean
+      android_cpu:
+        description: 'Include Android CPU render mode APK'
+        required: true
+        default: true
+        type: boolean
+      android_direct:
+        description: 'Include Android Direct render mode APK'
+        required: true
+        default: true
+        type: boolean
+      android_gpu:
+        description: 'Include Android GPU render mode APK'
+        required: true
+        default: true
+        type: boolean
       prerelease:
         description: 'Mark release as pre-release'
         required: true
@@ -459,7 +474,15 @@ jobs:
           if ("${{ github.event.inputs.build_android }}" -eq "true") {
             Write-Host "Packaging Android ARMv8 APKs..."
 
-            foreach ($mode in $modes) {
+            $androidModes = @()
+            if ("${{ github.event.inputs.android_cpu }}" -eq "true") { $androidModes += "cpu" }
+            if ("${{ github.event.inputs.android_direct }}" -eq "true") { $androidModes += "direct" }
+            if ("${{ github.event.inputs.android_gpu }}" -eq "true") { $androidModes += "gpu" }
+            if ($androidModes.Count -eq 0) {
+              throw "Android build is enabled, but no Android render mode was selected. Select CPU, Direct, or GPU."
+            }
+
+            foreach ($mode in $androidModes) {
               $apkName = "aqworlds-$version-$date-armv8-$mode.apk"
               $apkPath = Join-Path $artifactsDir $apkName
 
