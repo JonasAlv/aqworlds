@@ -186,12 +186,11 @@ jobs:
           Copy-Item -Path (Join-Path $apiDir "bin\AqwApi.swc") -Destination (Join-Path $staging "libs\AqwApi.swc") -Force
           Copy-Item -Path (Join-Path $uiDir "bin\ModUI-standalone.swc") -Destination (Join-Path $staging "libs\ModUI.swc") -Force
 
-          # 4. Compile AirShell.swf
+                    # 4. Compile AirShell.swf
           Write-Host "=> [4/4] Compiling AirShell.swf with AqwApi and ModUI..."
           Invoke-Checked $amxmlc @(
             "+configname=air",
             "-strict=false",
-            "-debug=true",
             "-default-size", "960", "550",
             "-default-frame-rate", "120",
             "-default-background-color", "0x000000",
