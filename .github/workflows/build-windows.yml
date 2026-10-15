@@ -172,7 +172,18 @@ jobs:
             (Join-Path $staging "icons") -Force | Out-Null
 
           Copy-Item -Path (Join-Path $loaderDir "src") -Destination (Join-Path $staging "src") -Recurse -Force
-          Copy-Item -Path (Join-Path $loaderDir "assets\*") -Destination (Join-Path $staging "assets") -Recurse -Force
+          
+          $loaderAssets = Join-Path $loaderDir "assets"
+          $stagingAssets = Join-Path $staging "assets"
+
+          # Staging assets already exists from the setup step.
+          if (Test-Path $loaderAssets -PathType Container) {
+              Copy-Item -Path (Join-Path $loaderAssets "*") `
+                -Destination $stagingAssets -Recurse -Force
+          } else {
+              Write-Host "No loader/assets directory; continuing without source assets."
+          }
+
           Copy-Item -Path (Join-Path $loaderDir "icons\*") -Destination (Join-Path $staging "icons") -Recurse -Force
           Copy-Item -Path (Join-Path $loaderDir "Desktop-app.xml") -Destination (Join-Path $staging "Desktop-app.xml") -Force
           Copy-Item -Path (Join-Path $loaderDir "Mobile-app.xml") -Destination (Join-Path $staging "Mobile-app.xml") -Force
