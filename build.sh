@@ -44,7 +44,12 @@ fi
 echo "=> [1/5] Copying loader/ to sandbox (build/staging/)..."
 mkdir -p "$STAGING/libs"
 cp -r "$CLIENT/src" "$STAGING/src"
-cp -r "$CLIENT/assets" "$STAGING/assets" 2>/dev/null || true
+
+mkdir -p "$STAGING/assets"
+if [ -d "$CLIENT/assets" ]; then
+    cp -r "$CLIENT/assets/." "$STAGING/assets/"
+fi
+ 2>/dev/null || true
 cp -r "$CLIENT/icons" "$STAGING/icons"
 cp -r "$CLIENT/res" "$STAGING/res" 2>/dev/null || true
 cp -r "$CLIENT/META-INF" "$STAGING/META-INF" 2>/dev/null || true

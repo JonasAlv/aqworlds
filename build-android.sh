@@ -56,7 +56,12 @@ fi
 echo "=> [1/5] Copying repository files to sandbox ($STAGING)..."
 mkdir -p "$STAGING/libs"
 cp -r "$DIR/loader/src" "$STAGING/src"
-cp -r "$DIR/loader/assets" "$STAGING/assets"
+
+mkdir -p "$STAGING/assets"
+if [ -d "$DIR/loader/assets" ]; then
+    cp -r "$DIR/loader/assets/." "$STAGING/assets/"
+fi
+
 cp -r "$DIR/loader/icons" "$STAGING/icons"
 cp -r "$DIR/loader/res" "$STAGING/res" 2>/dev/null || true
 cp -r "$DIR/loader/META-INF" "$STAGING/META-INF" 2>/dev/null || true
