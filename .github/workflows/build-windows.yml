@@ -1,4 +1,3 @@
-```yaml
 name: Build Windows App
 
 on:
@@ -575,4 +574,3 @@ jobs:
             Write-Warning "GitHub release publishing step failed: $_"
             Write-Warning "Artifacts remain available in the workflow run."
           }
-```
