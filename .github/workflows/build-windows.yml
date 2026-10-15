@@ -1,3 +1,4 @@
+```yaml
 name: Build Windows App
 
 on:
@@ -77,7 +78,9 @@ jobs:
         shell: pwsh
         run: |
           & haxelib install hscript --always
-          if ($LASTEXITCODE -ne 0) { throw "Failed to install hscript." }
+          if ($LASTEXITCODE -ne 0) {
+            throw "Failed to install hscript."
+          }
 
       - name: Cache AIR SDK
         id: cache-airsdk
@@ -104,12 +107,15 @@ jobs:
               $downloadUrl = "https://airsdk.harman.com/api/versions/51.4.1.1/sdks/AIRSDK_Windows.zip?license=accepted"
             }
 
-            Write-Host "Downloading AIR SDK from $downloadUrl..."
+            Write-Host "Downloading AIR SDK..."
             Invoke-WebRequest -Uri $downloadUrl -OutFile $zipPath
 
-            Write-Host "Extracting AIR SDK to $airDir..."
+            Write-Host "Extracting AIR SDK..."
             & 7z x $zipPath "-o$airDir" -y | Out-Null
-            if ($LASTEXITCODE -ne 0) { throw "Failed to extract AIR SDK." }
+            if ($LASTEXITCODE -ne 0) {
+              throw "Failed to extract AIR SDK."
+            }
+
             Remove-Item -Path $zipPath -Force
           } else {
             Write-Host "AIR SDK restored from cache at $airDir."
@@ -124,12 +130,14 @@ jobs:
         run: |
           $xmlPath = Join-Path $env:GITHUB_WORKSPACE "aqworlds\loader\Desktop-app.xml"
           $version = "1.1.0"
+
           if (Test-Path $xmlPath) {
             [xml]$xml = Get-Content $xmlPath
             if ($xml.application.versionNumber) {
               $version = $xml.application.versionNumber.Trim()
             }
           }
+
           Write-Host "Detected version: $version"
           "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
 
@@ -146,75 +154,162 @@ jobs:
           $airBin = Join-Path $env:AIR_HOME "bin"
           $amxmlc = Join-Path $airBin "amxmlc.bat"
 
-          function Invoke-Checked([string]$Executable, [string[]]$Arguments, [string]$Description) {
+          function Invoke-Checked(
+            [string]$Executable,
+            [string[]]$Arguments,
+            [string]$Description
+          ) {
             & $Executable @Arguments
-            if ($LASTEXITCODE -ne 0) { throw "$Description failed with exit code $LASTEXITCODE." }
+            if ($LASTEXITCODE -ne 0) {
+              throw "$Description failed with exit code $LASTEXITCODE."
+            }
           }
 
           # 1. Compile AqwApi.swc
-          Write-Host "=> [1/4] Compiling AqwApi (aqw-haxe-api)..."
+          Write-Host "=> [1/4] Compiling AqwApi..."
           Push-Location $apiDir
-          try { Invoke-Checked "haxe" @("build.hxml") "API compilation" }
-          finally { Pop-Location }
+          try {
+            Invoke-Checked "haxe" @("build.hxml") "API compilation"
+          } finally {
+            Pop-Location
+          }
 
           # 2. Compile ModUI-standalone.swc
-          Write-Host "=> [2/4] Compiling ModUI (aqw-haxe-ui)..."
+          Write-Host "=> [2/4] Compiling ModUI..."
           Push-Location $uiDir
-          try { Invoke-Checked "haxe" @("build-standalone.hxml") "UI compilation" }
-          finally { Pop-Location }
+          try {
+            Invoke-Checked "haxe" @("build-standalone.hxml") "UI compilation"
+          } finally {
+            Pop-Location
+          }
 
-          # 3. Setup sandbox staging
+          # 3. Set up staging directories
           Write-Host "=> [3/4] Setting up staging sandbox..."
-          if (Test-Path $staging) { Remove-Item -Path $staging -Recurse -Force }
+
+          if (Test-Path $staging) {
+            Remove-Item -Path $staging -Recurse -Force
+          }
+
           New-Item -ItemType Directory -Path `
             (Join-Path $staging "libs"), `
             (Join-Path $staging "assets"), `
             (Join-Path $staging "icons") -Force | Out-Null
 
-          Copy-Item -Path (Join-Path $loaderDir "src") -Destination (Join-Path $staging "src") -Recurse -Force
-          
+          # Source code is required.
+          $sourceDir = Join-Path $loaderDir "src"
+          if (-not (Test-Path $sourceDir -PathType Container)) {
+            throw "Required source directory is missing: $sourceDir"
+          }
+
+          Copy-Item -Path $sourceDir `
+            -Destination (Join-Path $staging "src") -Recurse -Force
+
+          # Assets are optional. An absent loader/assets directory is OK.
           $loaderAssets = Join-Path $loaderDir "assets"
           $stagingAssets = Join-Path $staging "assets"
 
-          # Staging assets already exists from the setup step.
           if (Test-Path $loaderAssets -PathType Container) {
+            $assetItems = @(Get-ChildItem -LiteralPath $loaderAssets -Force)
+
+            if ($assetItems.Count -gt 0) {
               Copy-Item -Path (Join-Path $loaderAssets "*") `
                 -Destination $stagingAssets -Recurse -Force
+            } else {
+              Write-Host "loader/assets exists but is empty; continuing."
+            }
           } else {
-              Write-Host "No loader/assets directory; continuing without source assets."
+            Write-Host "loader/assets is missing; continuing without source assets."
           }
 
-          Copy-Item -Path (Join-Path $loaderDir "icons\*") -Destination (Join-Path $staging "icons") -Recurse -Force
-          Copy-Item -Path (Join-Path $loaderDir "Desktop-app.xml") -Destination (Join-Path $staging "Desktop-app.xml") -Force
-          Copy-Item -Path (Join-Path $loaderDir "Mobile-app.xml") -Destination (Join-Path $staging "Mobile-app.xml") -Force
+          # Icons are optional too.
+          $loaderIcons = Join-Path $loaderDir "icons"
+          $stagingIcons = Join-Path $staging "icons"
 
-          # Copy native libraries if present
-          if (Test-Path (Join-Path $loaderDir "libs")) {
-            Copy-Item -Path (Join-Path $loaderDir "libs\*") -Destination (Join-Path $staging "libs") -Recurse -Force
+          if (Test-Path $loaderIcons -PathType Container) {
+            $iconItems = @(Get-ChildItem -LiteralPath $loaderIcons -Force)
+
+            if ($iconItems.Count -gt 0) {
+              Copy-Item -Path (Join-Path $loaderIcons "*") `
+                -Destination $stagingIcons -Recurse -Force
+            }
+          } else {
+            Write-Host "loader/icons is missing; continuing without source icons."
           }
 
-          # Place compiled SWCs into staging libs
-          Copy-Item -Path (Join-Path $apiDir "bin\AqwApi.swc") -Destination (Join-Path $staging "libs\AqwApi.swc") -Force
-          Copy-Item -Path (Join-Path $uiDir "bin\ModUI-standalone.swc") -Destination (Join-Path $staging "libs\ModUI.swc") -Force
+          # App descriptors are required for packaging.
+          foreach ($descriptor in @("Desktop-app.xml", "Mobile-app.xml")) {
+            $descriptorPath = Join-Path $loaderDir $descriptor
 
-                    # 4. Compile AirShell.swf
-          Write-Host "=> [4/4] Compiling AirShell.swf with AqwApi and ModUI..."
+            if (-not (Test-Path $descriptorPath -PathType Leaf)) {
+              throw "Required app descriptor is missing: $descriptorPath"
+            }
+
+            Copy-Item -Path $descriptorPath `
+              -Destination (Join-Path $staging $descriptor) -Force
+          }
+
+          # Copy native libraries if present.
+          $loaderLibs = Join-Path $loaderDir "libs"
+          $stagingLibs = Join-Path $staging "libs"
+
+          if (Test-Path $loaderLibs -PathType Container) {
+            $libItems = @(Get-ChildItem -LiteralPath $loaderLibs -Force)
+
+            if ($libItems.Count -gt 0) {
+              Copy-Item -Path (Join-Path $loaderLibs "*") `
+                -Destination $stagingLibs -Recurse -Force
+            }
+          }
+
+          # Place compiled SWCs into staging libs.
+          $apiSwc = Join-Path $apiDir "bin\AqwApi.swc"
+          $uiSwc = Join-Path $uiDir "bin\ModUI-standalone.swc"
+
+          if (-not (Test-Path $apiSwc -PathType Leaf)) {
+            throw "Compiled API SWC not found: $apiSwc"
+          }
+
+          if (-not (Test-Path $uiSwc -PathType Leaf)) {
+            throw "Compiled UI SWC not found: $uiSwc"
+          }
+
+          Copy-Item -Path $apiSwc `
+            -Destination (Join-Path $stagingLibs "AqwApi.swc") -Force
+
+          Copy-Item -Path $uiSwc `
+            -Destination (Join-Path $stagingLibs "ModUI.swc") -Force
+
+          # 4. Compile AirShell.swf
+          Write-Host "=> [4/4] Compiling AirShell.swf..."
+
+          $libraryPath = "-library-path+=$(Join-Path $staging 'libs')"
+          $apiLibrary = "-include-libraries+=$(Join-Path $staging 'libs\AqwApi.swc')"
+          $uiLibrary = "-include-libraries+=$(Join-Path $staging 'libs\ModUI.swc')"
+          $sourcePath = "-source-path+=$(Join-Path $staging 'src')"
+
           Invoke-Checked $amxmlc @(
             "+configname=air",
             "-strict=false",
             "-default-size", "960", "550",
             "-default-frame-rate", "120",
             "-default-background-color", "0x000000",
-            "-library-path+=$(Join-Path $staging 'libs')",
-            "-include-libraries+=$(Join-Path $staging 'libs\AqwApi.swc')",
-            "-include-libraries+=$(Join-Path $staging 'libs\ModUI.swc')",
-            "-source-path+=$(Join-Path $staging 'src')",
+            $libraryPath,
+            $apiLibrary,
+            $uiLibrary,
+            $sourcePath,
             "-output", (Join-Path $staging "AirShell.swf"),
             (Join-Path $staging "src\AirShell.as")
           ) "AirShell.swf compilation"
 
-          Copy-Item -Path (Join-Path $staging "AirShell.swf") -Destination (Join-Path $buildDir "AirShell.swf") -Force
-          Write-Host "=> Successfully compiled AirShell.swf."
+          $compiledSwf = Join-Path $staging "AirShell.swf"
+          if (-not (Test-Path $compiledSwf -PathType Leaf)) {
+            throw "AirShell compilation reported success, but AirShell.swf was not created."
+          }
+
+          Copy-Item -Path $compiledSwf `
+            -Destination (Join-Path $buildDir "AirShell.swf") -Force
+
+          Write-Host "Successfully compiled AirShell.swf."
 
       - name: Package Windows Bundles (and optional APK)
         id: package-bundles
@@ -229,65 +324,101 @@ jobs:
           $staging = Join-Path $buildDir "staging"
           $loaderDir = Join-Path $aqwDir "loader"
           $artifactsDir = Join-Path $aqwDir "artifacts"
+
           New-Item -ItemType Directory -Path $artifactsDir -Force | Out-Null
 
           $airBin = Join-Path $env:AIR_HOME "bin"
           $adt = Join-Path $airBin "adt.bat"
 
+          if (-not (Test-Path $adt -PathType Leaf)) {
+            throw "AIR packaging tool not found: $adt"
+          }
+
           # 1. Certificate setup
           $certificate = Join-Path $env:RUNNER_TEMP "aqworlds-signing.p12"
           $certPass = "temporary-ci-password"
+
           if ($env:KEYSTORE_P12_BASE64) {
-            Write-Host "=> Using persistent signing certificate from repository secret..."
-            [System.IO.File]::WriteAllBytes($certificate, [System.Convert]::FromBase64String($env:KEYSTORE_P12_BASE64))
-            if ($env:KEYSTORE_PASS) { $certPass = $env:KEYSTORE_PASS }
+            Write-Host "Using persistent signing certificate from repository secret..."
+            [System.IO.File]::WriteAllBytes(
+              $certificate,
+              [System.Convert]::FromBase64String($env:KEYSTORE_P12_BASE64)
+            )
+
+            if ($env:KEYSTORE_PASS) {
+              $certPass = $env:KEYSTORE_PASS
+            }
           } else {
-            Write-Host "=> Generating temporary signing certificate..."
+            Write-Host "Generating temporary signing certificate..."
             & $adt -certificate -cn "AQWorlds Mod CI" 2048-RSA $certificate $certPass
-            if ($LASTEXITCODE -ne 0) { throw "Failed to generate temporary signing certificate." }
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "Failed to generate temporary signing certificate."
+            }
           }
 
           # 2. Prepare descriptor
           $version = "${{ steps.get-version.outputs.version }}"
-          if (-not $version) { $version = "1.1.0" }
+          if (-not $version) {
+            $version = "1.1.0"
+          }
+
           $date = Get-Date -Format "dd-MM-yy"
 
-          $rawDescriptor = Get-Content (Join-Path $loaderDir "Desktop-app.xml") -Raw
+          $rawDescriptor = Get-Content `
+            (Join-Path $loaderDir "Desktop-app.xml") -Raw
+
           $cleanDescriptor = [System.Text.RegularExpressions.Regex]::Replace(
             $rawDescriptor,
             "<versionNumber>.*?</versionNumber>",
             "<versionNumber>$version</versionNumber>"
           )
 
-          # Modes to build: cpu, direct, gpu
+          # Determine render modes.
           $modes = @()
+
           if ("${{ github.event.inputs.include_cpu }}" -ne "false") {
             $modes += "cpu"
           }
+
           if ("${{ github.event.inputs.include_direct }}" -ne "false") {
             $modes += "direct"
           }
+
           if ("${{ github.event.inputs.include_gpu }}" -ne "false") {
             $modes += "gpu"
           }
+
           if ($modes.Count -eq 0) {
-            $modes = @("cpu", "direct", "gpu")
+            throw "Select at least one render mode (CPU, Direct, or GPU)."
+          }
+
+          # Ensure the required runtime file exists.
+          $airShell = Join-Path $buildDir "AirShell.swf"
+          if (-not (Test-Path $airShell -PathType Leaf)) {
+            throw "AirShell.swf is missing: $airShell"
           }
 
           foreach ($mode in $modes) {
-            Write-Host "=> Packaging Windows x64 bundle ($mode render)..."
+            Write-Host "Packaging Windows x64 bundle ($mode render)..."
+
             $modeDescriptor = [System.Text.RegularExpressions.Regex]::Replace(
               $cleanDescriptor,
               "<renderMode>.*?</renderMode>",
               "<renderMode>$mode</renderMode>"
             )
+
             $descriptorFile = Join-Path $buildDir "Desktop-app-$mode.xml"
             Set-Content -Path $descriptorFile -Value $modeDescriptor -Encoding utf8
 
             $bundleDir = Join-Path $buildDir "AQWorlds-Windows-x64-$mode"
-            if (Test-Path $bundleDir) { Remove-Item -Path $bundleDir -Recurse -Force }
 
-            # Package files: AirShell.swf + assets + icons (+ gamefiles if present)
+            if (Test-Path $bundleDir) {
+              Remove-Item -Path $bundleDir -Recurse -Force
+            }
+
+            # Package AirShell.swf and staging assets/icons.
+            # Empty assets/icons directories are intentionally allowed.
             $packageArgs = @(
               "-package",
               "-storetype", "pkcs12",
@@ -298,56 +429,75 @@ jobs:
               $bundleDir,
               $descriptorFile,
               "-C", $buildDir, "AirShell.swf",
-              "-C", $staging, "assets", "icons"
+              "-C", $staging, "assets",
+              "-C", $staging, "icons"
             )
 
-            if (Test-Path (Join-Path $staging "gamefiles")) {
+            $stagingGamefiles = Join-Path $staging "gamefiles"
+            if (Test-Path $stagingGamefiles -PathType Container) {
               $packageArgs += @("-C", $staging, "gamefiles")
             }
 
             & $adt @packageArgs
-            if ($LASTEXITCODE -ne 0) { throw "AIR bundle packaging failed for mode $mode." }
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "AIR bundle packaging failed for mode $mode."
+            }
 
             $zipName = "aqworlds-$version-$date-x64-$mode.zip"
             $zipPath = Join-Path $artifactsDir $zipName
-            if (Test-Path $zipPath) { Remove-Item -Path $zipPath -Force }
 
-            Write-Host "   Compressing into $zipName..."
-            Compress-Archive -Path $bundleDir -DestinationPath $zipPath -CompressionLevel Optimal
+            if (Test-Path $zipPath) {
+              Remove-Item -Path $zipPath -Force
+            }
+
+            Write-Host "Compressing into $zipName..."
+            Compress-Archive -Path $bundleDir `
+              -DestinationPath $zipPath -CompressionLevel Optimal
           }
 
-          # Optional Android package
+          # Optional Android APK packaging.
           if ("${{ github.event.inputs.build_android }}" -eq "true") {
-            Write-Host "=> Packaging Android ARMv8 APKs..."
+            Write-Host "Packaging Android ARMv8 APKs..."
+
             foreach ($mode in $modes) {
               $apkName = "aqworlds-$version-$date-armv8-$mode.apk"
               $apkPath = Join-Path $artifactsDir $apkName
 
-              $rawMobileXml = Get-Content (Join-Path $loaderDir "Mobile-app.xml") -Raw
+              $rawMobileXml = Get-Content `
+                (Join-Path $loaderDir "Mobile-app.xml") -Raw
+
               $mobileXml = [System.Text.RegularExpressions.Regex]::Replace(
                 $rawMobileXml,
                 "<versionNumber>.*?</versionNumber>",
                 "<versionNumber>$version</versionNumber>"
               )
+
               $mobileXml = [System.Text.RegularExpressions.Regex]::Replace(
                 $mobileXml,
                 "<renderMode>.*?</renderMode>",
                 "<renderMode>$mode</renderMode>"
               )
+
               $mobileXmlPath = Join-Path $buildDir "Mobile-app-armv8-$mode.xml"
               Set-Content -Path $mobileXmlPath -Value $mobileXml -Encoding utf8
 
-              Write-Host "   -> Packaging $apkName (arch: armv8, mode: $mode)..."
+              Write-Host "Packaging $apkName (armv8, $mode)..."
+
               & $adt -package `
                 -target apk-captive-runtime `
                 -arch armv8 `
                 -storetype PKCS12 `
-                -keystore $certificate -storepass $certPass `
+                -keystore $certificate `
+                -storepass $certPass `
                 $apkPath $mobileXmlPath `
                 -C $buildDir AirShell.swf `
-                -C $staging assets icons
+                -C $staging assets `
+                -C $staging icons
 
-              if ($LASTEXITCODE -ne 0) { throw "Android APK packaging failed for mode $mode." }
+              if ($LASTEXITCODE -ne 0) {
+                throw "Android APK packaging failed for mode $mode."
+              }
             }
           }
 
@@ -364,12 +514,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          $ErrorActionPreference = "Stop"
+
           try {
             $date = Get-Date -Format "dd-MM-yy"
             $tagDate = Get-Date -Format "yyyyMMdd"
             $version = "${{ steps.get-version.outputs.version }}"
             $artifactsDir = Join-Path $env:GITHUB_WORKSPACE "aqworlds\artifacts"
-            $files = Get-ChildItem -Path $artifactsDir -File | ForEach-Object { $_.FullName }
+
+            $files = @(
+              Get-ChildItem -Path $artifactsDir -File |
+                ForEach-Object { $_.FullName }
+            )
 
             if ($files.Count -eq 0) {
               Write-Warning "No artifacts found in $artifactsDir to publish."
@@ -378,6 +534,14 @@ jobs:
 
             $tag = "v$version-$tagDate-run${{ github.run_number }}"
             $title = "AQWorlds Mod $version ($date)"
+
+            $artifactNotes = (
+              Get-ChildItem -Path $artifactsDir -File |
+                ForEach-Object {
+                  "- **$($_.Name)** ($([math]::Round($_.Length / 1MB, 2)) MB)"
+                }
+            ) -join "`n"
+
             $notes = @"
           ## AQWorlds Client Release
           - **Client Version**: $version
@@ -385,7 +549,7 @@ jobs:
           - **Commit**: $env:GITHUB_SHA
 
           ### Included Artifacts:
-          $(Get-ChildItem -Path $artifactsDir -File | ForEach-Object { "- **`$($_.Name)`** ($([math]::Round($_.Length / 1MB, 2)) MB)" } | Out-String)
+          $artifactNotes
           "@
 
             $cmdArgs = @(
@@ -403,6 +567,12 @@ jobs:
 
             Write-Host "Creating GitHub Release $tag..."
             & gh @cmdArgs
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "GitHub release creation failed."
+            }
           } catch {
             Write-Warning "GitHub release publishing step failed: $_"
+            Write-Warning "Artifacts remain available in the workflow run."
           }
+```
