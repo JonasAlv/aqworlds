@@ -23,6 +23,16 @@ on:
         required: true
         default: false
         type: boolean
+      android_armv7:
+        description: 'Build Android ARMv7 APKs'
+        required: true
+        default: true
+        type: boolean
+      android_armv8:
+        description: 'Build Android ARMv8 APKs'
+        required: true
+        default: true
+        type: boolean
       android_cpu:
         description: 'Include Android CPU render mode APK'
         required: true
@@ -472,53 +482,28 @@ jobs:
 
           # Optional Android APK packaging.
           if ("${{ github.event.inputs.build_android }}" -eq "true") {
-            Write-Host "Packaging Android ARMv8 APKs..."
-
             $androidModes = @()
             if ("${{ github.event.inputs.android_cpu }}" -eq "true") { $androidModes += "cpu" }
             if ("${{ github.event.inputs.android_direct }}" -eq "true") { $androidModes += "direct" }
             if ("${{ github.event.inputs.android_gpu }}" -eq "true") { $androidModes += "gpu" }
-            if ($androidModes.Count -eq 0) {
-              throw "Android build is enabled, but no Android render mode was selected. Select CPU, Direct, or GPU."
-            }
+            $androidArchs = @()
+            if ("${{ github.event.inputs.android_armv7 }}" -eq "true") { $androidArchs += "armv7" }
+            if ("${{ github.event.inputs.android_armv8 }}" -eq "true") { $androidArchs += "armv8" }
+            if ($androidModes.Count -eq 0) { throw "Android build is enabled, but no render mode was selected." }
+            if ($androidArchs.Count -eq 0) { throw "Android build is enabled, but neither ARMv7 nor ARMv8 was selected." }
 
-            foreach ($mode in $androidModes) {
-              $apkName = "aqworlds-$version-$date-armv8-$mode.apk"
-              $apkPath = Join-Path $artifactsDir $apkName
-
-              $rawMobileXml = Get-Content `
-                (Join-Path $loaderDir "Mobile-app.xml") -Raw
-
-              $mobileXml = [System.Text.RegularExpressions.Regex]::Replace(
-                $rawMobileXml,
-                "<versionNumber>.*?</versionNumber>",
-                "<versionNumber>$version</versionNumber>"
-              )
-
-              $mobileXml = [System.Text.RegularExpressions.Regex]::Replace(
-                $mobileXml,
-                "<renderMode>.*?</renderMode>",
-                "<renderMode>$mode</renderMode>"
-              )
-
-              $mobileXmlPath = Join-Path $buildDir "Mobile-app-armv8-$mode.xml"
-              Set-Content -Path $mobileXmlPath -Value $mobileXml -Encoding utf8
-
-              Write-Host "Packaging $apkName (armv8, $mode)..."
-
-              & $adt -package `
-                -target apk-captive-runtime `
-                -arch armv8 `
-                -storetype PKCS12 `
-                -keystore $certificate `
-                -storepass $certPass `
-                $apkPath $mobileXmlPath `
-                -C $buildDir AirShell.swf `
-                -C $staging assets `
-                -C $staging icons
-
-              if ($LASTEXITCODE -ne 0) {
-                throw "Android APK packaging failed for mode $mode."
+            foreach ($arch in $androidArchs) {
+              foreach ($mode in $androidModes) {
+                $apkName = "aqworlds-$version-$date-$arch-$mode.apk"
+                $apkPath = Join-Path $artifactsDir $apkName
+                $rawMobileXml = Get-Content (Join-Path $loaderDir "Mobile-app.xml") -Raw
+                $mobileXml = [System.Text.RegularExpressions.Regex]::Replace($rawMobileXml, "<versionNumber>.*?</versionNumber>", "<versionNumber>$version</versionNumber>")
+                $mobileXml = [System.Text.RegularExpressions.Regex]::Replace($mobileXml, "<renderMode>.*?</renderMode>", "<renderMode>$mode</renderMode>")
+                $mobileXmlPath = Join-Path $buildDir "Mobile-app-$arch-$mode.xml"
+                Set-Content -Path $mobileXmlPath -Value $mobileXml -Encoding utf8
+                Write-Host "Packaging $apkName ($arch, $mode)..."
+                & $adt -package -target apk-captive-runtime -arch $arch -storetype PKCS12 -keystore $certificate -storepass $certPass $apkPath $mobileXmlPath -C $buildDir AirShell.swf -C $staging assets -C $staging icons
+                if ($LASTEXITCODE -ne 0) { throw "Android APK packaging failed for $arch/$mode." }
               }
             }
           }
