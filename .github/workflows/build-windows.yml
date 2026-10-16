@@ -145,6 +145,28 @@ jobs:
             Write-Host "AIR SDK restored from cache at $airDir."
           }
 
+          Write-Host "AIR SDK version reported by ADT:"
+          & "$airDir\bin\adt.bat" -version
+          if ($LASTEXITCODE -ne 0) { throw "Could not read AIR SDK version." }
+
+          $keepFile = Join-Path $airDir "lib\android\lib\multidex-1.0.2\addToPrimaryDex.keep"
+          if (Test-Path $keepFile) {
+            Write-Host "addToPrimaryDex.keep SHA-256:"
+            (Get-FileHash -Path $keepFile -Algorithm SHA256).Hash
+            Write-Host "addToPrimaryDex.keep contents:"
+            Get-Content -Path $keepFile
+          } else {
+            Write-Warning "AIR SDK multidex keep file not found: $keepFile"
+          }
+
+          Write-Host "Bundled Android D8/R8 libraries (name, size, SHA-256):"
+          Get-ChildItem -Path (Join-Path $airDir "lib\android") -Recurse -File |
+            Where-Object { $_.Name -match '(^|[-_])(d8|r8)([-_.]|$)|r8.*\.jar$' } |
+            ForEach-Object {
+              $hash = (Get-FileHash -Path $_.FullName -Algorithm SHA256).Hash
+              Write-Host "$($_.FullName) | $($_.Length) bytes | $hash"
+            }
+
           "AIR_HOME=$airDir" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           "$airDir\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
