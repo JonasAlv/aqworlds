@@ -62,6 +62,13 @@ if [ -d "$DIR/loader/assets" ]; then
     cp -r "$DIR/loader/assets/." "$STAGING/assets/"
 fi
 
+# Bundle the API's built-in HScript files. The API looks for these at
+# applicationDirectory/assets/scripts at runtime.
+if [ -d "$HAXE_API_DIR/assets/scripts" ]; then
+    mkdir -p "$STAGING/assets/scripts"
+    cp -r "$HAXE_API_DIR/assets/scripts/." "$STAGING/assets/scripts/"
+fi
+
 cp -r "$DIR/loader/icons" "$STAGING/icons"
 cp -r "$DIR/loader/res" "$STAGING/res" 2>/dev/null || true
 cp -r "$DIR/loader/META-INF" "$STAGING/META-INF" 2>/dev/null || true

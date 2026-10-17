@@ -267,6 +267,21 @@ jobs:
             Write-Host "loader/assets is missing; continuing without source assets."
           }
 
+          # Bundle the API's built-in HScript files. The API looks for these
+          # at applicationDirectory/assets/scripts at runtime.
+          $apiAssetsScripts = Join-Path $apiDir "assets\scripts"
+          $stagingScripts = Join-Path $stagingAssets "scripts"
+          if (Test-Path $apiAssetsScripts -PathType Container) {
+            New-Item -ItemType Directory -Path $stagingScripts -Force | Out-Null
+            $scriptItems = @(Get-ChildItem -LiteralPath $apiAssetsScripts -Force)
+            if ($scriptItems.Count -gt 0) {
+              Copy-Item -Path (Join-Path $apiAssetsScripts "*") `
+                -Destination $stagingScripts -Recurse -Force
+            }
+          } else {
+            Write-Host "aqw-haxe-api/assets/scripts is missing; continuing without bundled scripts."
+          }
+
           # Icons are optional too.
           $loaderIcons = Join-Path $loaderDir "icons"
           $stagingIcons = Join-Path $staging "icons"
